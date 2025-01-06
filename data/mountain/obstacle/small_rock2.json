@@ -1,0 +1,6 @@
+{
+	"type": "damage",
+	"width": 2,
+	"height": 2,
+	"scene": "res://scenes/level/mountain/obstacle/small_rock2.tscn"
+}

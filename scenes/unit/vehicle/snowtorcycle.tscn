@@ -1,0 +1,300 @@
+[gd_scene load_steps=34 format=3 uid="uid://bsisipyo73u31"]
+
+[ext_resource type="Script" path="res://scenes/unit/vehicle/snowtorcycle.gd" id="1_hkaha"]
+[ext_resource type="Texture2D" uid="uid://de360p2156tbl" path="res://assets/sprites/snowtorcycle_tires.png" id="2_sv0nd"]
+[ext_resource type="PackedScene" uid="uid://bip382xqa46t6" path="res://scenes/effect/vertical_explosion_effect.tscn" id="3_0oymc"]
+[ext_resource type="Texture2D" uid="uid://cac883w75r6qg" path="res://assets/sprites/snowtorcycle_chasis.png" id="3_2rv2i"]
+[ext_resource type="Texture2D" uid="uid://bxrujuy1eccw4" path="res://assets/sprites/snowtorcycle_handle_bars.png" id="4_5u42l"]
+[ext_resource type="PackedScene" uid="uid://b0efpfst015he" path="res://scenes/effect/trail_effect.tscn" id="4_owxwu"]
+[ext_resource type="PackedScene" uid="uid://bo54oev3baol6" path="res://scenes/effect/boost_effect.tscn" id="5_cg552"]
+[ext_resource type="Texture2D" uid="uid://1dk2ynw5qk8a" path="res://assets/sprites/snowtorcycle_boost_cover.png" id="6_f73tf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q16v"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(0, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13bhp"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(12, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu26f"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(24, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpmod"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(36, 0, 12, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sim34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q16v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13bhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu26f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpmod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka1wy"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(36, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq5hr"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(0, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sjpu"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(12, 0, 12, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjbtc"]
+atlas = ExtResource("2_sv0nd")
+region = Rect2(24, 0, 12, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1uvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka1wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq5hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sjpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjbtc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw5t1"]
+atlas = ExtResource("3_2rv2i")
+region = Rect2(0, 0, 24, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4atk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw5t1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqoqq"]
+atlas = ExtResource("4_5u42l")
+region = Rect2(0, 0, 52, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_inaww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqoqq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt4j0"]
+size = Vector2(16, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbp2g"]
+size = Vector2(16, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnct8"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt60i"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp37l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30jtk"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwb2"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbda7"]
+size = Vector2(8, 8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4m5v"]
+radius = 4.0
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cloy0"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8mvid"]
+radius = 3.0
+height = 12.0
+
+[node name="Snowtorcycle" type="CharacterBody2D" groups=["vehicle"]]
+z_index = 10
+z_as_relative = false
+collision_layer = 128
+script = ExtResource("1_hkaha")
+
+[node name="AnimatedSprite2DFrontTire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -35)
+sprite_frames = SubResource("SpriteFrames_sim34")
+autoplay = "default"
+frame_progress = 0.657683
+
+[node name="AnimatedSprite2DBackTire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 29)
+sprite_frames = SubResource("SpriteFrames_m1uvo")
+autoplay = "default"
+frame_progress = 0.382397
+
+[node name="AnimatedSprite2DBody" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_4atk5")
+
+[node name="AnimatedSprite2DHandleBars" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_inaww")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_kt4j0")
+
+[node name="Area2DDamage" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDamage"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_xbp2g")
+
+[node name="Area2DKill" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DKill"]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_xnct8")
+
+[node name="Area2DJump" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DJump"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_lt60i")
+
+[node name="Area2DWin" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DWin"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_qp37l")
+
+[node name="Area2DIce" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DIce"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_30jtk")
+
+[node name="Area2DFallFront" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFallFront"]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_8qwb2")
+
+[node name="Area2DFallBack" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFallBack"]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_dbda7")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_n4m5v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_cloy0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, 29)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8mvid")
+
+[node name="Marker2DBackTire" type="Marker2D" parent="."]
+position = Vector2(0, 29)
+
+[node name="TrailEffect" parent="Marker2DBackTire" instance=ExtResource("4_owxwu")]
+z_index = 4
+z_as_relative = false
+
+[node name="BoostEffect1" parent="Marker2DBackTire" instance=ExtResource("5_cg552")]
+unique_name_in_owner = true
+visible = false
+z_index = 11
+z_as_relative = false
+position = Vector2(-7, 1)
+width = 5.0
+
+[node name="BoostEffect2" parent="Marker2DBackTire" instance=ExtResource("5_cg552")]
+unique_name_in_owner = true
+visible = false
+z_index = 11
+z_as_relative = false
+position = Vector2(7, 1)
+width = 5.0
+size = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 12
+z_as_relative = false
+position = Vector2(0, 30)
+texture = ExtResource("6_f73tf")
+
+[node name="VehicleExplosionEffect" parent="." instance=ExtResource("3_0oymc")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false

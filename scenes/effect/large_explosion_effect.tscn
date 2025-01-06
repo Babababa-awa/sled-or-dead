@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj0ryq7pjuk4k"]
+
+[ext_resource type="Script" path="res://scenes/effect/large_explosion_effect.gd" id="1_qdico"]
+[ext_resource type="PackedScene" uid="uid://cv8508xitrp6t" path="res://scenes/effect/sprite/explosion.tscn" id="2_7ibib"]
+
+[node name="LargeExplosionEffect" type="Node2D"]
+script = ExtResource("1_qdico")
+
+[node name="Explosion13" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(0, -64)
+
+[node name="Explosion12" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(0, 64)
+
+[node name="Explosion11" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(-64, 0)
+
+[node name="Explosion10" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(64, 0)
+
+[node name="Explosion9" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(32, 32)
+
+[node name="Explosion8" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(-32, -32)
+
+[node name="Explosion7" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(-32, 32)
+
+[node name="Explosion6" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(32, -32)
+
+[node name="Explosion5" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(32, 0)
+
+[node name="Explosion4" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(-32, 0)
+
+[node name="Explosion3" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(0, -32)
+
+[node name="Explosion2" parent="." instance=ExtResource("2_7ibib")]
+position = Vector2(0, 32)
+
+[node name="Explosion1" parent="." instance=ExtResource("2_7ibib")]
+
+[node name="Explosion14" parent="." instance=ExtResource("2_7ibib")]

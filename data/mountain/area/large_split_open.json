@@ -1,0 +1,89 @@
+{
+	"bottom": "large_split",
+	"top": "open",
+	"width": 64,
+	"height": 64,
+	"obstacles": [
+		{
+			"max_difficulty": 5,
+			"areas": [
+				{
+					"generate": true,
+					"position": [12, 4],
+					"size": [12, 12],
+					"max_obstacle_size": [8, 8],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-19, 39],
+					"size": [18, 18],
+					"max_obstacle_size": [6, 6],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [10, 47],
+					"size": [12, 12],
+					"max_obstacle_size": [6, 6],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [8, 32],
+					"size": [12, 12],
+					"max_obstacle_size": [4, 4],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-19, 4],
+					"size": [8, 32],
+					"max_obstacle_size": [3, 4],
+					"spacing": [3, 6]
+				}
+			]
+		},
+		{
+			"min_difficulty": 5,
+			"areas": [
+				{
+					"generate": true,
+					"position": [12, 4],
+					"size": [12, 12],
+					"max_obstacle_size": [8, 8],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-19, 39],
+					"size": [18, 18],
+					"max_obstacle_size": [6, 6],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [10, 47],
+					"size": [12, 12],
+					"max_obstacle_size": [6, 6],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [8, 32],
+					"size": [12, 12],
+					"max_obstacle_size": [4, 4],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-19, 4],
+					"size": [8, 32],
+					"max_obstacle_size": [3, 4],
+					"spacing": [2, 4]
+				}
+			]
+		}
+	],
+	"scene": "res://scenes/level/mountain/area/large_split_open.tscn"
+}

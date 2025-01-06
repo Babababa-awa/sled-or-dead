@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcg1v7y2c8q4v"]
+
+[ext_resource type="Script" path="res://scenes/unit/enemy/machine_gun_turret.gd" id="1_tnpmd"]
+[ext_resource type="PackedScene" uid="uid://e50lebmfm4a" path="res://scenes/unit/enemy/component/turret_sprite.tscn" id="2_i07nw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skr73"]
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iryiy"]
+height = 64.0
+
+[node name="MachineGunTurret" type="CharacterBody2D" groups=["enemy"]]
+z_index = 7
+z_as_relative = false
+collision_layer = 128
+script = ExtResource("1_tnpmd")
+weapon_type = 0
+
+[node name="TurretSprite" parent="." instance=ExtResource("2_i07nw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_skr73")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+shape = SubResource("CapsuleShape2D_iryiy")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo54oev3baol6"]
+
+[ext_resource type="Script" path="res://scenes/effect/boost_effect.gd" id="1_pv2dk"]
+
+[sub_resource type="Curve" id="Curve_m3gjf"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_w4twx"]
+offsets = PackedFloat32Array(0, 0.292079, 0.589109, 1)
+colors = PackedColorArray(1, 0.847059, 0, 0, 1, 0.847059, 0, 0.247059, 1, 0.416667, 0, 0.498039, 1, 0, 0, 1)
+
+[node name="BoostEffect" type="Line2D"]
+width = 20.0
+width_curve = SubResource("Curve_m3gjf")
+gradient = SubResource("Gradient_w4twx")
+script = ExtResource("1_pv2dk")

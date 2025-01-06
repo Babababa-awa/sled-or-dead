@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://n2gtr0mwuw6b"]
+
+[ext_resource type="Script" path="res://scenes/unit/player/jelly.gd" id="1_h4dne"]
+[ext_resource type="Texture2D" uid="uid://72h2n67rwbt3" path="res://assets/sprites/jelly.png" id="2_pjgm0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmiww"]
+atlas = ExtResource("2_pjgm0")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlxdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmiww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxhxl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmabm"]
+
+[node name="Jelly" type="CharacterBody2D" groups=["player"]]
+z_index = 11
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_h4dne")
+
+[node name="AnimatedSprite2DBody" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qlxdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_uxhxl")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+shape = SubResource("CapsuleShape2D_xmabm")

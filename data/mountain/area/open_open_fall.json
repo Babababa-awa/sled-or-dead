@@ -1,0 +1,132 @@
+{
+	"min_difficulty": 3,
+	"bottom": "open",
+	"top": "open",
+	"width": 64,
+	"height": 128,
+	"obstacles": [
+		{
+			"max_difficulty": 5,
+			"areas": [
+				{
+					"generate": true,
+					"position": [5, 77],
+					"size": [12, 24],
+					"max_obstacle_size": [6, 6],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-16, 97],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [16, 114],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-27, 51],
+					"size": [12, 12],
+					"max_obstacle_size": [5, 5],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-12, 45],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [15, 53],
+					"size": [8, 8],
+					"max_obstacle_size": [2, 2],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [22, 4],
+					"size": [7, 21],
+					"max_obstacle_size": [2, 2],
+					"spacing": [3, 6]
+				},
+				{
+					"generate": true,
+					"position": [-26, 4],
+					"size": [11, 36],
+					"max_obstacle_size": [6, 6],
+					"spacing": [3, 6]
+				}
+			]
+		},
+		{
+			"min_difficulty": 5,
+			"areas": [
+				{
+					"generate": true,
+					"position": [5, 77],
+					"size": [12, 24],
+					"max_obstacle_size": [6, 6],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-16, 97],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [16, 114],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-27, 51],
+					"size": [12, 12],
+					"max_obstacle_size": [5, 5],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-12, 45],
+					"size": [9, 9],
+					"max_obstacle_size": [5, 5],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [15, 53],
+					"size": [8, 8],
+					"max_obstacle_size": [2, 2],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [22, 4],
+					"size": [7, 21],
+					"max_obstacle_size": [2, 2],
+					"spacing": [2, 4]
+				},
+				{
+					"generate": true,
+					"position": [-26, 4],
+					"size": [11, 36],
+					"max_obstacle_size": [6, 6],
+					"spacing": [2, 4]
+				}
+			]
+		}
+	],
+	"scene": "res://scenes/level/mountain/area/open_open_fall.tscn"
+}

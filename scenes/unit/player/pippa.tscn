@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4k40h2fh603p"]
+
+[ext_resource type="Script" path="res://scenes/unit/player/pippa.gd" id="1_0vcee"]
+[ext_resource type="Texture2D" uid="uid://drdpp5fupv0x7" path="res://assets/sprites/pippa.png" id="2_lguj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qex0c"]
+atlas = ExtResource("2_lguj6")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8ikc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qex0c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hjp0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vatxb"]
+
+[node name="Pippa" type="CharacterBody2D" groups=["neutral", "player"]]
+z_index = 11
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_0vcee")
+
+[node name="AnimatedSprite2DBody" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c8ikc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_2hjp0")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_vatxb")

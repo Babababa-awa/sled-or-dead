@@ -1,0 +1,189 @@
+{
+	"bottom": "open",
+	"top": "open",
+	"width": 64,
+	"height": 64,
+	"obstacles": [
+		{
+			"difficulty": 1,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [3, 6],
+					"volume": 0.5
+				}
+			]
+		},
+		{
+			"difficulty": 2,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [3, 6],
+					"volume": 0.60
+				}
+			]
+		},
+		{
+			"difficulty": 3,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [3, 6],
+					"volume": 0.65
+				}
+			]
+		},
+		{
+			"difficulty": 4,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 0.70
+				}
+			]
+		},
+		{
+			"difficulty": 5,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 75
+				}
+			]
+		},
+		{
+			"difficulty": 6,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 0.80
+				}
+			]
+		},
+		{
+			"difficulty": 7,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 0.85
+				}
+			]
+		},
+		{
+			"difficulty": 8,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 0.90
+				}
+			]
+		},
+		{
+			"difficulty": 8,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [8, 8],
+					"spacing": [2, 4],
+					"volume": 0.90
+				}
+			]
+		},
+		{
+			"difficulty": 9,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4],
+					"volume": 0.95
+				}
+			]
+		},
+		{
+			"difficulty": 9,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [8, 8],
+					"spacing": [2, 4],
+					"volume": 0.95
+				}
+			]
+		},
+		{
+			"difficulty": 10,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [16, 16],
+					"spacing": [2, 4]
+				}
+			]
+		},
+		{
+			"difficulty": 10,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [8, 8],
+					"spacing": [2, 4]
+				}
+			]
+		},
+		{
+			"difficulty": 10,
+			"areas": [
+				{
+					"generate": true,
+					"position": [-30, 2],
+					"size": [60, 60],
+					"max_obstacle_size": [2, 4],
+					"spacing": [2, 4],
+					"type": "exploding_barrel"
+				}
+			]
+		}
+	],
+	"scene": "res://scenes/level/mountain/area/open_open.tscn"
+}

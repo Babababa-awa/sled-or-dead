@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://h462wqad38r7"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_fra1q"]
+[ext_resource type="PackedScene" uid="uid://coyy4gorpq7c6" path="res://scenes/ui/menu.tscn" id="2_s5d2x"]
+[ext_resource type="PackedScene" uid="uid://ctd1pmydxlt1t" path="res://scenes/ui/pause.tscn" id="3_x527k"]
+[ext_resource type="PackedScene" uid="uid://bd8sa6qbfeo5u" path="res://scenes/ui/controls.tscn" id="4_e62tl"]
+[ext_resource type="PackedScene" uid="uid://cf5cmnwig2y7m" path="res://scenes/ui/win.tscn" id="5_0ykbg"]
+[ext_resource type="PackedScene" uid="uid://cla778k1c4440" path="res://scenes/ui/game_mode.tscn" id="5_1yobk"]
+[ext_resource type="PackedScene" uid="uid://ctk8l2uxc2tbe" path="res://scenes/ui/settings.tscn" id="6_tx01e"]
+[ext_resource type="PackedScene" uid="uid://lw2yes78jsio" path="res://scenes/ui/difficulty.tscn" id="7_oqvsp"]
+[ext_resource type="PackedScene" uid="uid://bdqsnaph7j08w" path="res://scenes/hud.tscn" id="8_2scf5"]
+[ext_resource type="PackedScene" uid="uid://bfvi5kylfkrhr" path="res://scenes/ui/lose.tscn" id="8_jclbl"]
+[ext_resource type="PackedScene" uid="uid://bjnti3ijf6sjb" path="res://scenes/ui/loading.tscn" id="10_kr2w2"]
+[ext_resource type="PackedScene" uid="uid://dkdd4wlrtdhh8" path="res://scenes/ui/select.tscn" id="11_lps00"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_fra1q")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Menu" parent="UI" instance=ExtResource("2_s5d2x")]
+
+[node name="Controls" parent="UI" instance=ExtResource("4_e62tl")]
+visible = false
+
+[node name="Settings" parent="UI" instance=ExtResource("6_tx01e")]
+visible = false
+
+[node name="Game Mode" parent="UI" instance=ExtResource("5_1yobk")]
+visible = false
+
+[node name="Difficulty" parent="UI" instance=ExtResource("7_oqvsp")]
+visible = false
+
+[node name="Hud" parent="UI" instance=ExtResource("8_2scf5")]
+visible = false
+scale = Vector2(2, 2)
+
+[node name="Win" parent="UI" instance=ExtResource("5_0ykbg")]
+visible = false
+
+[node name="Lose" parent="UI" instance=ExtResource("8_jclbl")]
+visible = false
+
+[node name="Pause" parent="UI" instance=ExtResource("3_x527k")]
+visible = false
+
+[node name="Select" parent="UI" instance=ExtResource("11_lps00")]
+visible = false
+
+[node name="Loading" parent="UI" instance=ExtResource("10_kr2w2")]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjnti3ijf6sjb"]
+
+[ext_resource type="Script" path="res://scenes/ui/loading.gd" id="1_rbbpj"]
+[ext_resource type="Texture2D" uid="uid://bse30lsu2hhmk" path="res://assets/ui/loader.png" id="2_v1b8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_widjp"]
+atlas = ExtResource("2_v1b8j")
+region = Rect2(0, 0, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhrpw"]
+atlas = ExtResource("2_v1b8j")
+region = Rect2(0, 12, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i00f5"]
+atlas = ExtResource("2_v1b8j")
+region = Rect2(0, 24, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl65l"]
+atlas = ExtResource("2_v1b8j")
+region = Rect2(0, 36, 56, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6hkb"]
+atlas = ExtResource("2_v1b8j")
+region = Rect2(0, 48, 56, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iedvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_widjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhrpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i00f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl65l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6hkb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rbbpj")
+ui_type = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2DLoader" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_iedvq")
+autoplay = "default"
+frame_progress = 0.0249767

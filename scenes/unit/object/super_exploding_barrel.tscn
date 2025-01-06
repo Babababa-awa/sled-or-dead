@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://etr4v6333v6"]
+
+[ext_resource type="Script" path="res://scenes/unit/object/super_exploding_barrel.gd" id="1_s4r6d"]
+[ext_resource type="Texture2D" uid="uid://dst3ju6lx5dm0" path="res://assets/sprites/object/exploding_barrel.png" id="2_obo2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgrdx"]
+atlas = ExtResource("2_obo2o")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b46m6"]
+atlas = ExtResource("2_obo2o")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63jh7"]
+atlas = ExtResource("2_obo2o")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0yxt"]
+atlas = ExtResource("2_obo2o")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxh4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgrdx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b46m6")
+}],
+"loop": true,
+"name": &"default_1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63jh7")
+}],
+"loop": true,
+"name": &"super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0yxt")
+}],
+"loop": true,
+"name": &"super_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u6n43"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7oi42"]
+radius = 16.0
+height = 64.0
+
+[node name="SuperExplodingBarrel" type="CharacterBody2D" groups=["object"]]
+z_index = 3
+z_as_relative = false
+collision_layer = 128
+script = ExtResource("1_s4r6d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nxh4q")
+animation = &"super"
+autoplay = "super"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_u6n43")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+shape = SubResource("CapsuleShape2D_7oi42")

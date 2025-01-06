@@ -1,0 +1,8 @@
+{
+	"type": "exploding_barrel",
+	"width": 1,
+	"height": 2,
+	"centered": true,
+	"min_difficulty": 5,
+	"scene": "res://scenes/unit/object/super_exploding_barrel.tscn"
+}

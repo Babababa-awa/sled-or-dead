@@ -1,0 +1,7 @@
+{
+	"type": "crate",
+	"width": 2,
+	"height": 2,
+	"centered": true,
+	"scene": "res://scenes/unit/object/small_crate.tscn"
+}

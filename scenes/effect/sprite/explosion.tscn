@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cv8508xitrp6t"]
+
+[ext_resource type="Texture2D" uid="uid://bsx4bfeasg8g0" path="res://assets/sprites/explosion.png" id="1_3yake"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2n2e"]
+atlas = ExtResource("1_3yake")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqux3"]
+atlas = ExtResource("1_3yake")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tey8l"]
+atlas = ExtResource("1_3yake")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2wfv"]
+atlas = ExtResource("1_3yake")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm8mx"]
+atlas = ExtResource("1_3yake")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqio"]
+atlas = ExtResource("1_3yake")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq24t"]
+atlas = ExtResource("1_3yake")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3whyg"]
+atlas = ExtResource("1_3yake")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt3ok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2n2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqux3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tey8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2wfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm8mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq24t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3whyg")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pt3ok")

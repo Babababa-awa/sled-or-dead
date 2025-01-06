@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://coyy4gorpq7c6"]
+
+[ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_rvltp"]
+[ext_resource type="PackedScene" uid="uid://cmrmlavbbk6e1" path="res://scenes/ui/component/goto_button.tscn" id="2_a0qvn"]
+[ext_resource type="Texture2D" uid="uid://dajqaq7m5345n" path="res://assets/ui/title.png" id="2_n5p86"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbspu"]
+atlas = ExtResource("2_n5p86")
+region = Rect2(0, 0, 160, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8dlc"]
+atlas = ExtResource("2_n5p86")
+region = Rect2(0, 100, 160, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke7o3"]
+atlas = ExtResource("2_n5p86")
+region = Rect2(0, 200, 160, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2lcc"]
+atlas = ExtResource("2_n5p86")
+region = Rect2(0, 300, 160, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5bei"]
+atlas = ExtResource("2_n5p86")
+region = Rect2(0, 400, 160, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2pyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbspu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8dlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke7o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2lcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5bei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvltp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.498039)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2DTitle" type="AnimatedSprite2D" parent="MarginContainer"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_a2pyb")
+autoplay = "default"
+frame_progress = 0.198363
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="GotoButtonStart" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_a0qvn")]
+layout_mode = 2
+text = "Start"
+goto_ui_id = &"game_mode"
+
+[node name="GotoButtonSettings" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_a0qvn")]
+layout_mode = 2
+text = "Settings"
+goto_ui_id = &"settings"
+
+[node name="GotoButtonControls" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_a0qvn")]
+layout_mode = 2
+text = "Controls"
+goto_ui_id = &"controls"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ButtonExit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

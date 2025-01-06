@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://cla778k1c4440"]
+
+[ext_resource type="Script" path="res://scenes/ui/game_mode.gd" id="1_3mq43"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_pypjb"]
+[ext_resource type="PackedScene" uid="uid://cmrmlavbbk6e1" path="res://scenes/ui/component/goto_button.tscn" id="3_fbm63"]
+
+[node name="Game Mode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mq43")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.498039)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleLabel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_pypjb")]
+layout_mode = 2
+text = "Game Mode"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GotoButtonInfinite" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fbm63")]
+layout_mode = 2
+text = "Infinite"
+goto_ui_id = &"difficulty"
+
+[node name="GotoButtonFinishLine" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fbm63")]
+layout_mode = 2
+text = "Finish Line"
+goto_ui_id = &"difficulty"
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fbm63")]
+layout_mode = 2
+text = "Go Back"
+goto_ui_id = &"parent"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GotoButtonInfinite" to="." method="_on_goto_button_infinite_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GotoButtonFinishLine" to="." method="_on_goto_button_finish_line_pressed"]

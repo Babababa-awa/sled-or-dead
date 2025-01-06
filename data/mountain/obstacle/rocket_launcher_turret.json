@@ -1,0 +1,8 @@
+{
+	"type": "turret",
+	"width": 1,
+	"height": 2,
+	"centered": true,
+	"min_difficulty": 8,
+	"scene": "res://scenes/unit/enemy/rocket_launcher_turret.tscn"
+}

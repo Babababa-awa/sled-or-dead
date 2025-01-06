@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5m7xek4mdx77"]
+
+[ext_resource type="Script" path="res://scenes/unit/projectile/rocket.gd" id="1_5vv3m"]
+[ext_resource type="Texture2D" uid="uid://br133a40xt1df" path="res://assets/sprites/rocket.png" id="2_1ms58"]
+[ext_resource type="PackedScene" uid="uid://bo54oev3baol6" path="res://scenes/effect/boost_effect.tscn" id="3_74cnb"]
+[ext_resource type="PackedScene" uid="uid://cj4rurn8u7gdh" path="res://scenes/effect/small_explosion_effect.tscn" id="4_x70mb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bi5g"]
+atlas = ExtResource("2_1ms58")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm83q"]
+atlas = ExtResource("2_1ms58")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k24c"]
+atlas = ExtResource("2_1ms58")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adtmx"]
+atlas = ExtResource("2_1ms58")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tr7ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bi5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm83q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k24c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adtmx")
+}],
+"loop": true,
+"name": &"lockon",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8aeaf"]
+radius = 9.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovjul"]
+radius = 9.0
+height = 32.0
+
+[node name="Rocket" type="CharacterBody2D"]
+z_index = 5
+z_as_relative = false
+collision_layer = 256
+script = ExtResource("1_5vv3m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tr7ui")
+animation = &"lockon"
+autoplay = "default"
+frame_progress = 0.320874
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8aeaf")
+
+[node name="Area2DDamage" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDamage"]
+shape = SubResource("CapsuleShape2D_ovjul")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 15)
+
+[node name="BoostEffect" parent="Marker2D" instance=ExtResource("3_74cnb")]
+unique_name_in_owner = true
+size = 8
+
+[node name="SmallExplosionEffect" parent="." instance=ExtResource("4_x70mb")]
+unique_name_in_owner = true
+z_index = 13
+
+[connection signal="body_entered" from="Area2DDamage" to="." method="_on_area_2d_damage_body_entered"]

@@ -1,0 +1,6 @@
+{
+	"type": "jump",
+	"width": 4,
+	"height": 3,
+	"scene": "res://scenes/level/mountain/obstacle/small_jump.tscn"
+}

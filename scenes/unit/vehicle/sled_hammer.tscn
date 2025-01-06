@@ -1,0 +1,184 @@
+[gd_scene load_steps=20 format=3 uid="uid://vu2uhue56pgl"]
+
+[ext_resource type="Script" path="res://scenes/unit/vehicle/sled_hammer.gd" id="1_el527"]
+[ext_resource type="PackedScene" uid="uid://bip382xqa46t6" path="res://scenes/effect/vertical_explosion_effect.tscn" id="2_03588"]
+[ext_resource type="Texture2D" uid="uid://d1qyox1e4q3wa" path="res://assets/sprites/sled_hammer.png" id="2_rwxfn"]
+[ext_resource type="PackedScene" uid="uid://b0efpfst015he" path="res://scenes/effect/trail_effect.tscn" id="3_lspfd"]
+[ext_resource type="PackedScene" uid="uid://bo54oev3baol6" path="res://scenes/effect/boost_effect.tscn" id="4_d2m0p"]
+[ext_resource type="Texture2D" uid="uid://jwdtqw7um5s3" path="res://assets/sprites/sled_hammer_boost_cover.png" id="5_d6w2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2wh1"]
+atlas = ExtResource("2_rwxfn")
+region = Rect2(0, 0, 40, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc172"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2wh1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v45tn"]
+radius = 8.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1f6l"]
+radius = 8.0
+height = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2drco"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frnwc"]
+size = Vector2(16, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x6uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnoas"]
+size = Vector2(16, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfby3"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o8kb"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnxeh"]
+size = Vector2(10, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_winej"]
+size = Vector2(14, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtpu0"]
+size = Vector2(30, 4)
+
+[node name="SledHammer" type="CharacterBody2D" groups=["vehicle"]]
+z_index = 10
+z_as_relative = false
+collision_layer = 128
+script = ExtResource("1_el527")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dc172")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_v45tn")
+
+[node name="Area2DDamage" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDamage"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_a1f6l")
+
+[node name="Area2DKill" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DKill"]
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_2drco")
+
+[node name="Area2DJump" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DJump"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_frnwc")
+
+[node name="Area2DWin" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DWin"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_1x6uc")
+
+[node name="Area2DIce" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DIce"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_mnoas")
+
+[node name="Area2DFallFront" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFallFront"]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_dfby3")
+
+[node name="Area2DFallBack" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFallBack"]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_5o8kb")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_nnxeh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_winej")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_gtpu0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 31)
+
+[node name="TrailEffect1" parent="Marker2D" instance=ExtResource("3_lspfd")]
+z_index = 4
+z_as_relative = false
+position = Vector2(-6, 2)
+width = 6.0
+
+[node name="TrailEffect2" parent="Marker2D" instance=ExtResource("3_lspfd")]
+z_index = 4
+z_as_relative = false
+position = Vector2(6, 2)
+width = 6.0
+
+[node name="BoostEffect" parent="Marker2D" instance=ExtResource("4_d2m0p")]
+unique_name_in_owner = true
+visible = false
+z_index = 11
+z_as_relative = false
+position = Vector2(0, 3)
+width = 8.0
+
+[node name="Sprite2DBoostCover" type="Sprite2D" parent="."]
+z_index = 12
+z_as_relative = false
+position = Vector2(0, 34)
+texture = ExtResource("5_d6w2k")
+
+[node name="VehicleExplosionEffect" parent="." instance=ExtResource("2_03588")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false

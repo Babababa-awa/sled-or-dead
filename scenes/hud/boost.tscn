@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl37abc4v2eb3"]
+
+[ext_resource type="TileSet" uid="uid://b0m2bmwp11gtu" path="res://resources/boost.tres" id="1_884qi"]
+[ext_resource type="Script" path="res://scenes/hud/boost.gd" id="3_rhlaa"]
+
+[node name="Boost" type="Node2D"]
+script = ExtResource("3_rhlaa")
+
+[node name="TileMapLayerBackground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_884qi")
+
+[node name="TileMapLayerState" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+tile_set = ExtResource("1_884qi")

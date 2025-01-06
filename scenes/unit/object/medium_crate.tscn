@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://bopsv4v1bcamk"]
+
+[ext_resource type="Script" path="res://scenes/unit/object/medium_crate.gd" id="1_qoojj"]
+[ext_resource type="Texture2D" uid="uid://bb1fsf45h46s4" path="res://assets/sprites/object/medium_crate.png" id="2_a6pho"]
+[ext_resource type="PackedScene" uid="uid://dbkumm4qo16ax" path="res://scenes/effect/medium_explosion_effect.tscn" id="3_kmhef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg2e2"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as6ex"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6702"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umxbw"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kb3b"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0qo7"]
+atlas = ExtResource("2_a6pho")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0o0mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg2e2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as6ex")
+}],
+"loop": true,
+"name": &"default_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6702")
+}],
+"loop": true,
+"name": &"default_2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umxbw")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kb3b")
+}],
+"loop": true,
+"name": &"yellow_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0qo7")
+}],
+"loop": true,
+"name": &"yellow_2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kn3q"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kukt"]
+size = Vector2(128, 128)
+
+[node name="MediumCrate" type="CharacterBody2D" groups=["object"]]
+z_index = 3
+z_as_relative = false
+collision_layer = 128
+script = ExtResource("1_qoojj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0o0mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6kn3q")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+shape = SubResource("RectangleShape2D_4kukt")
+
+[node name="MediumExplosionEffect" parent="." instance=ExtResource("3_kmhef")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false

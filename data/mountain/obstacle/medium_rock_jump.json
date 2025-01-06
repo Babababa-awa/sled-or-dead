@@ -1,0 +1,6 @@
+{
+	"width": 16,
+	"height": 8,
+	"min_difficulty": 2,
+	"scene": "res://scenes/level/mountain/obstacle/medium_rock_jump.tscn"
+}

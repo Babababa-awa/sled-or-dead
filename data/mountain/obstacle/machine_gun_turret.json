@@ -1,0 +1,8 @@
+{
+	"type": "turret",
+	"width": 1,
+	"height": 2,
+	"centered": true,
+	"min_difficulty": 5,
+	"scene": "res://scenes/unit/enemy/machine_gun_turret.tscn"
+}

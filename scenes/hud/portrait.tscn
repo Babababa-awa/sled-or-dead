@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvufluok7quq7"]
+
+[ext_resource type="Script" path="res://scenes/hud/portrait.gd" id="1_piatu"]
+[ext_resource type="TileSet" uid="uid://o8p3scfl6kiy" path="res://resources/portraits.tres" id="2_fwcvm"]
+[ext_resource type="TileSet" uid="uid://c4hitx6c6dwbw" path="res://resources/icons.tres" id="3_7cini"]
+[ext_resource type="TileSet" uid="uid://c0fvtoi48fx8m" path="res://resources/portrait_overlays.tres" id="4_aa5dd"]
+
+[node name="Portrait" type="Node2D"]
+script = ExtResource("1_piatu")
+
+[node name="TileMapLayerPortrait" type="TileMapLayer" parent="."]
+position = Vector2(8, 8)
+tile_set = ExtResource("2_fwcvm")
+
+[node name="TileMapLayerHealth1" type="TileMapLayer" parent="."]
+position = Vector2(4, 72)
+tile_set = ExtResource("3_7cini")
+
+[node name="TileMapLayerHealth2" type="TileMapLayer" parent="."]
+position = Vector2(24, 72)
+tile_set = ExtResource("3_7cini")
+
+[node name="TileMapLayerHealth3" type="TileMapLayer" parent="."]
+position = Vector2(44, 72)
+tile_set = ExtResource("3_7cini")
+
+[node name="TileMapLayerOverlay" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_aa5dd")

@@ -1,0 +1,8 @@
+{
+	"type": "turret",
+	"width": 1,
+	"height": 2,
+	"centered": true,
+	"min_difficulty": 4,
+	"scene": "res://scenes/unit/enemy/pistol_turret.tscn"
+}

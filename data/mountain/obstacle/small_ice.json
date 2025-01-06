@@ -1,0 +1,6 @@
+{
+	"type": "ice",
+	"width": 13,
+	"height": 10,
+	"scene": "res://scenes/level/mountain/obstacle/small_ice.tscn"
+}

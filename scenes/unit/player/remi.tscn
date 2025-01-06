@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://gamdocmhpfrb"]
+
+[ext_resource type="Script" path="res://scenes/unit/player/remi.gd" id="1_0nqbs"]
+[ext_resource type="Texture2D" uid="uid://m3y3wce0lxgb" path="res://assets/sprites/remi.png" id="2_wjnw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udiee"]
+atlas = ExtResource("2_wjnw4")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0enr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udiee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aco1s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ky0qp"]
+
+[node name="Remi" type="CharacterBody2D" groups=["player"]]
+z_index = 11
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_0nqbs")
+
+[node name="AnimatedSprite2DBody" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p0enr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_aco1s")
+
+[node name="Area2DProjectile" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DProjectile"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_ky0qp")

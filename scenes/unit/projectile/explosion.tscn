@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://gui7xe48ya7d"]
+
+[ext_resource type="Script" path="res://scenes/unit/projectile/explosion.gd" id="1_n68n1"]
+[ext_resource type="PackedScene" uid="uid://cj4rurn8u7gdh" path="res://scenes/effect/small_explosion_effect.tscn" id="2_ghq7t"]
+[ext_resource type="PackedScene" uid="uid://dbkumm4qo16ax" path="res://scenes/effect/medium_explosion_effect.tscn" id="3_1mfe2"]
+[ext_resource type="PackedScene" uid="uid://bj0ryq7pjuk4k" path="res://scenes/effect/large_explosion_effect.tscn" id="4_f8mxu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gsw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdf6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dl7bm"]
+
+[node name="Explosion" type="CharacterBody2D"]
+z_index = 5
+z_as_relative = false
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_n68n1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3gsw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vdf6y")
+
+[node name="Area2DDamage" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 384
+collision_mask = 384
+
+[node name="CollisionShape2DDamage" type="CollisionShape2D" parent="Area2DDamage"]
+shape = SubResource("CircleShape2D_dl7bm")
+
+[node name="SmallExplosionEffect" parent="." instance=ExtResource("2_ghq7t")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false
+
+[node name="MediumExplosionEffect" parent="." instance=ExtResource("3_1mfe2")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false
+
+[node name="LargeExplosionEffect" parent="." instance=ExtResource("4_f8mxu")]
+unique_name_in_owner = true
+z_index = 13
+z_as_relative = false

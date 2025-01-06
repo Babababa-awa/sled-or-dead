@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ck7erckqy66nt"]
+
+[node name="TitleLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.294118, 0.160784, 0.454902, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.294118, 0.160784, 0.454902, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 48

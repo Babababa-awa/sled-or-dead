@@ -1,0 +1,7 @@
+{
+	"bottom": "start",
+	"top": "open",
+	"width": 64,
+	"height": 64,
+	"scene": "res://scenes/level/mountain/area/start_open.tscn"
+}

@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkdd4wlrtdhh8"]
+
+[ext_resource type="Script" path="res://scenes/ui/select.gd" id="1_tj5ms"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_kfqwt"]
+
+[node name="Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tj5ms")
+ui_type = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(240, 120)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+color = Color(0, 0, 0, 0.439216)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+custom_minimum_size = Vector2(208, 88)
+layout_mode = 2
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 224.0
+offset_bottom = 104.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/ColorRect/VBoxContainer" instance=ExtResource("2_kfqwt")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Jelly Hoshiumi"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Weapon:"
+
+[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Shotgun"

@@ -1,0 +1,8 @@
+{
+	"type": "crate",
+	"width": 4,
+	"height": 4,
+	"centered": true,
+	"min_difficulty": 2,
+	"scene": "res://scenes/unit/object/medium_crate.tscn"
+}
