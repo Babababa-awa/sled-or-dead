@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/level/start.gd" id="1_dw30r"]
 [ext_resource type="PackedScene" uid="uid://xvjfgbpjwgtq" path="res://scenes/level/mountain/snow_64_64.tscn" id="2_7qu0p"]
 [ext_resource type="TileSet" uid="uid://c7b3y6coofh30" path="res://resources/mountain.tres" id="3_afhjn"]
-[ext_resource type="Texture2D" uid="uid://72h2n67rwbt3" path="res://assets/sprites/jelly.png" id="4_2p8b0"]
-[ext_resource type="Texture2D" uid="uid://m3y3wce0lxgb" path="res://assets/sprites/remi.png" id="5_wyp8d"]
-[ext_resource type="Texture2D" uid="uid://drdpp5fupv0x7" path="res://assets/sprites/pippa.png" id="6_0uwe8"]
-[ext_resource type="Texture2D" uid="uid://d1qyox1e4q3wa" path="res://assets/sprites/sled_hammer.png" id="7_gb2b6"]
-[ext_resource type="Texture2D" uid="uid://j3s3qhibojmo" path="res://assets/sprites/snowtorcycle.png" id="7_mckl3"]
-[ext_resource type="Texture2D" uid="uid://bvlo5whpsuem4" path="res://assets/ui/arrow.png" id="8_gduv2"]
+[ext_resource type="Texture2D" uid="uid://72h2n67rwbt3" path="res://assets/image/unit/player/jelly.png" id="4_2p8b0"]
+[ext_resource type="Texture2D" uid="uid://m3y3wce0lxgb" path="res://assets/image/unit/player/remi.png" id="5_wyp8d"]
+[ext_resource type="Texture2D" uid="uid://drdpp5fupv0x7" path="res://assets/image/unit/player/pippa.png" id="6_0uwe8"]
+[ext_resource type="Texture2D" uid="uid://d1qyox1e4q3wa" path="res://assets/image/unit/vehicle/sled_hammer.png" id="7_gb2b6"]
+[ext_resource type="Texture2D" uid="uid://j3s3qhibojmo" path="res://assets/image/unit/vehicle/snowtorcycle.png" id="7_mckl3"]
+[ext_resource type="Texture2D" uid="uid://bvlo5whpsuem4" path="res://assets/image/game/arrow.png" id="8_gduv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1g5r"]
 atlas = ExtResource("4_2p8b0")

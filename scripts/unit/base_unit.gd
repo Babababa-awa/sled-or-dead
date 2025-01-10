@@ -22,6 +22,9 @@ func reset() -> void:
 	
 	_show_unit()
 
+func set_mode(mode: StringName) -> void:
+	pass
+	
 func _ready() -> void:
 	pass
 	

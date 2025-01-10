@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b5m7xek4mdx77"]
 
 [ext_resource type="Script" path="res://scenes/unit/projectile/rocket.gd" id="1_5vv3m"]
-[ext_resource type="Texture2D" uid="uid://br133a40xt1df" path="res://assets/sprites/rocket.png" id="2_1ms58"]
+[ext_resource type="Texture2D" uid="uid://br133a40xt1df" path="res://assets/image/unit/projectile/rocket.png" id="2_1ms58"]
 [ext_resource type="PackedScene" uid="uid://bo54oev3baol6" path="res://scenes/effect/boost_effect.tscn" id="3_74cnb"]
 [ext_resource type="PackedScene" uid="uid://cj4rurn8u7gdh" path="res://scenes/effect/small_explosion_effect.tscn" id="4_x70mb"]
 

@@ -41,7 +41,7 @@ neutral=""
 [gui]
 
 theme/custom="res://resources/ui.tres"
-theme/custom_font="res://assets/fonts/PlaywriteDEGrund-Regular.ttf"
+theme/custom_font="res://assets/font/PlaywriteDEGrund-Regular.ttf"
 
 [input]
 

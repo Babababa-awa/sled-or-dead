@@ -219,3 +219,15 @@ func select_random_items(array: Array, count: int) -> Array:
 	var shuffled = array.duplicate()
 	shuffled.shuffle()
 	return shuffled.slice(0, count)
+
+
+func format_distance(distance: int) -> String:
+	return str(distance) + "m"
+	
+	
+func format_time(time: int) -> String:
+	var total_seconds = floor(time / 1000)
+	var hours = floor(total_seconds / 3600)
+	var minutes = floor((total_seconds % 3600) / 60)
+	var seconds = total_seconds % 60
+	return "%d:%02d:%02d" % [hours, minutes, seconds]

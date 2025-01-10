@@ -42,7 +42,7 @@ var fall_cooldown: CooldownTimer
 # Ice
 var ICE_COOLDOWN_DELTA = 0.125
 var ice_cooldown: CooldownTimer
-var ice_turn_speed: float = 580.0
+var ice_turn_speed: float = 90.0
 var ice_direction: int = 0
 
 # Swap
@@ -62,6 +62,9 @@ var direction: float = 0.0
 var turn_speed: float = 135.0
 var max_turn_angle: float = 50.0
 
+var _start_time: int = 0
+var _stop_time: int = 0
+var _pause_delta: float = 0.0
 
 func _init(
 	alias_: StringName,
@@ -177,8 +180,14 @@ func reset() -> void:
 	is_in_jump_area = false
 	is_in_win_area = false
 
+	speed = 0.0
+	direction = 0.0
 	boost = 100
 	is_boosting = false
+	
+	_start_time = 0
+	_stop_time = 0
+	_pause_delta = 0.0
 
 	win_cooldown.reset()
 	fall_cooldown.reset()
@@ -188,6 +197,9 @@ func reset() -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
+	
+	if Global.game.is_paused:
+		_pause_delta += delta
 	
 	if not _can_process():
 		return
@@ -205,6 +217,9 @@ func _physics_process(delta: float) -> void:
 	
 	if not _can_process():
 		return
+		
+	if speed != 0 and _start_time == 0:
+		_start_time = Time.get_ticks_msec()
 
 	_handle_boost(delta)
 
@@ -389,7 +404,7 @@ func _handle_jump(delta: float) -> void:
 
 	if jump_height > 0.0:
 		var scale_value = jump_height / MAX_JUMP_HEIGHT
-		scale_value = 1.0 + scale_value * scale_value * 0.25
+		scale_value = 1.0 + scale_value * scale_value * 0.5
 		scale = Vector2(scale_value, scale_value)
 	elif jump_travel > 0.0:
 		jump_travel = 0.0
@@ -442,6 +457,7 @@ func _handle_win(delta: float) -> void:
 
 	if not Global.game.is_win and win_cooldown.start():
 		is_enabled = false
+		_stop_time = Time.get_ticks_msec()
 	elif win_cooldown.is_complete:
 		win_cooldown.complete()
 		Global.game.is_win = true
@@ -449,6 +465,7 @@ func _handle_win(delta: float) -> void:
 func _start_death() -> void:
 	Global.driver.health = 0
 	Global.passenger.health = 0
+	_stop_time = Time.get_ticks_msec()
 	
 func _complete_death() -> void:
 	Global.game.is_lose = true
@@ -501,3 +518,12 @@ func _get_driver_position() -> Vector2:
 
 func _get_passenger_position() -> Vector2:
 	return Vector2(0, 16)
+
+func get_distance_travelled() -> int:
+	return -round(Global.vehicle.position.y / Global.TILE_SIZE) - 8
+	
+func get_time_travelled() -> int:
+	if _stop_time == 0:
+		return Time.get_ticks_msec() - _start_time - round(_pause_delta)
+
+	return _stop_time - _start_time - round(_pause_delta)

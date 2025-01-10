@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdqsnaph7j08w"]
+[gd_scene load_steps=5 format=3 uid="uid://bdqsnaph7j08w"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_asei3"]
 [ext_resource type="PackedScene" uid="uid://cvufluok7quq7" path="res://scenes/hud/portrait.tscn" id="2_h7jv6"]
 [ext_resource type="PackedScene" uid="uid://bl37abc4v2eb3" path="res://scenes/hud/boost.tscn" id="3_j4cqw"]
+[ext_resource type="PackedScene" uid="uid://d4cnaxp6g4f2h" path="res://scenes/hud/progress.tscn" id="4_vbs4b"]
 
 [node name="Hud" type="Node2D"]
 script = ExtResource("1_asei3")
@@ -19,3 +20,5 @@ position = Vector2(168, 24)
 type = "Vehicle"
 
 [node name="Boost" parent="." instance=ExtResource("3_j4cqw")]
+
+[node name="Progress" parent="." instance=ExtResource("4_vbs4b")]

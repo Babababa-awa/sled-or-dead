@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4k40h2fh603p"]
 
 [ext_resource type="Script" path="res://scenes/unit/player/pippa.gd" id="1_0vcee"]
-[ext_resource type="Texture2D" uid="uid://drdpp5fupv0x7" path="res://assets/sprites/pippa.png" id="2_lguj6"]
+[ext_resource type="Texture2D" uid="uid://drdpp5fupv0x7" path="res://assets/image/unit/player/pippa.png" id="2_lguj6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qex0c"]
 atlas = ExtResource("2_lguj6")

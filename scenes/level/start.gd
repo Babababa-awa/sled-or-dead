@@ -38,11 +38,11 @@ func _init() -> void:
 
 func start_select() -> void:
 	reset()
-	#Global.game.show_ui(&"select")
+	Global.game.show_ui(&"select")
 	sprite_arrow.visible = true
 	sprite_arrow.play(&"default")
 	Global.audio.play_sfx(&"ui/choose_your_driver")
-	#TODO: Playe choos your driver audio
+	Global.game.get_ui(&"select").set_player(Global.PlayerType.JELLY)
 
 func reset() -> void:
 	Global.game.hide_ui(&"select")
@@ -158,12 +158,15 @@ func _select_player() -> void:
 	
 func _select_jelly() -> void:
 	_current_arrow_position = sprite_jelly.position - Vector2(0, 56)
+	Global.game.get_ui(&"select").set_player(Global.PlayerType.JELLY)
 
 func _select_remi() -> void:
 	_current_arrow_position = sprite_remi.position - Vector2(0, 56)
+	Global.game.get_ui(&"select").set_player(Global.PlayerType.REMI)
 	
 func _select_pippa() -> void:
 	_current_arrow_position = sprite_pippa.position - Vector2(0, 56)
+	Global.game.get_ui(&"select").set_player(Global.PlayerType.PIPPA)
 
 func _select_vehicle() -> void:
 	match selectable_vehicle_types[current_vehicle_type_index]:
@@ -174,9 +177,11 @@ func _select_vehicle() -> void:
 			
 func _select_sled_hammer() -> void:
 	_current_arrow_position = sprite_sled_hammer.position - Vector2(0, 80)
+	Global.game.get_ui(&"select").set_vehicle(Global.VehicleType.SLED_HAMMER)
 
 func _select_snowtorcycle() -> void:
 	_current_arrow_position = sprite_snowtorcycle.position - Vector2(0, 92)
+	Global.game.get_ui(&"select").set_vehicle(Global.VehicleType.SNOWTORCYCLE)
 	
 func _confirm_select() -> void:
 	if current_select_state == SELECT_DRIVER:
@@ -194,6 +199,9 @@ func _confirm_select() -> void:
 		_play_player_select_sfx(Global.passenger_player_type)
 		selectable_player_types.remove_at(current_player_type_index)
 		current_player_type_index = 0
+		
+		
+		Global.game.get_ui(&"select").set_none()
 		
 		sprite_arrow.visible = false
 		current_select_state = SELECT_CAMERA
@@ -277,7 +285,7 @@ func _on_area_2d_snowtorcycle_mouse_entered() -> void:
 func _on_area_2d_jelly_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if current_select_state != SELECT_DRIVER and current_select_state != SELECT_PASSENGER:
 		return
-		
+	
 	if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and event.pressed:
 		if selectable_player_types[current_player_type_index] == Global.PlayerType.JELLY:
 			_confirm_select()

@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkdd4wlrtdhh8"]
+[gd_scene load_steps=9 format=3 uid="uid://dkdd4wlrtdhh8"]
 
 [ext_resource type="Script" path="res://scenes/ui/select.gd" id="1_tj5ms"]
 [ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_kfqwt"]
+[ext_resource type="Texture2D" uid="uid://47bltqlr23i6" path="res://assets/image/game/progress.png" id="3_qyfdr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gfoi"]
+atlas = ExtResource("3_qyfdr")
+region = Rect2(0, 12, 26, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8m7b"]
+atlas = ExtResource("3_qyfdr")
+region = Rect2(0, 24, 26, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8snc"]
+atlas = ExtResource("3_qyfdr")
+region = Rect2(0, 36, 26, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqnq4"]
+atlas = ExtResource("3_qyfdr")
+region = Rect2(0, 0, 26, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrxfb"]
+atlas = ExtResource("3_qyfdr")
+region = Rect2(0, 48, 26, 12)
 
 [node name="Select" type="Control"]
 layout_mode = 3
@@ -22,40 +43,635 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-custom_minimum_size = Vector2(240, 120)
+[node name="ControlJelly" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-color = Color(0, 0, 0, 0.439216)
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
-custom_minimum_size = Vector2(208, 88)
-layout_mode = 2
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 224.0
-offset_bottom = 104.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ControlJelly"]
+custom_minimum_size = Vector2(288, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -144.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="TitleLabel" parent="MarginContainer/ColorRect/VBoxContainer" instance=ExtResource("2_kfqwt")]
+[node name="TitleLabel" parent="MarginContainer/ControlJelly/VBoxContainer" instance=ExtResource("2_kfqwt")]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
 text = "Jelly Hoshiumi"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/ColorRect/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ControlJelly/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-columns = 2
+size_flags_vertical = 2
+columns = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/GridContainer"]
+[node name="Control" type="Control" parent="MarginContainer/ControlJelly/VBoxContainer/GridContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ControlJelly/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Weapon:"
+horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/GridContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/ControlJelly/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Shotgun"
+
+[node name="ControlRemi" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ControlRemi"]
+custom_minimum_size = Vector2(288, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/ControlRemi/VBoxContainer" instance=ExtResource("2_kfqwt")]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Remilia Nephys"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ControlRemi/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+columns = 3
+
+[node name="Control" type="Control" parent="MarginContainer/ControlRemi/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ControlRemi/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Weapon:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/ControlRemi/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Wocket Launcher"
+
+[node name="ControlPippa" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ControlPippa"]
+custom_minimum_size = Vector2(288, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/ControlPippa/VBoxContainer" instance=ExtResource("2_kfqwt")]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Pipkin Pippa"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ControlPippa/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+columns = 3
+
+[node name="Control" type="Control" parent="MarginContainer/ControlPippa/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ControlPippa/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Weapon:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/ControlPippa/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Pi-Shooter"
+
+[node name="ControlSledHammer" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ControlSledHammer"]
+custom_minimum_size = Vector2(288, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/ControlSledHammer/VBoxContainer" instance=ExtResource("2_kfqwt")]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Sled Hammer"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ControlSledHammer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="Control12" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Durability:"
+horizontal_alignment = 2
+
+[node name="Label22" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "125"
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Min Speed:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "75"
+horizontal_alignment = 1
+
+[node name="TextureRect42" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control2" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Max Speed:"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "400"
+horizontal_alignment = 1
+
+[node name="TextureRect43" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control3" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Acceleration:"
+horizontal_alignment = 2
+
+[node name="Label6" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "150"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control4" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Decceleration:"
+horizontal_alignment = 2
+
+[node name="Label8" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "150"
+horizontal_alignment = 1
+
+[node name="TextureRect32" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control5" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Turn:"
+horizontal_alignment = 2
+
+[node name="Label10" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "90"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8snc")
+
+[node name="Control6" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Max Turn:"
+horizontal_alignment = 2
+
+[node name="Label12" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "52"
+horizontal_alignment = 1
+
+[node name="TextureRect33" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control7" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Type:"
+horizontal_alignment = 2
+
+[node name="Label14" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Drain"
+horizontal_alignment = 1
+
+[node name="Control8" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Speed:"
+horizontal_alignment = 2
+
+[node name="Label16" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "250"
+horizontal_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_jqnq4")
+
+[node name="Control10" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label17" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Turn:"
+horizontal_alignment = 2
+
+[node name="Label18" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "270"
+horizontal_alignment = 1
+
+[node name="TextureRect52" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_jqnq4")
+
+[node name="Control11" type="Control" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label19" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Max Turn:"
+horizontal_alignment = 2
+
+[node name="Label20" type="Label" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "62"
+horizontal_alignment = 1
+
+[node name="TextureRect44" type="TextureRect" parent="MarginContainer/ControlSledHammer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="ControlSnowtorcycle" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ControlSnowtorcycle"]
+custom_minimum_size = Vector2(288, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer" instance=ExtResource("2_kfqwt")]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Snowtorcycle"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="Control12" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Durability:"
+horizontal_alignment = 2
+
+[node name="Label22" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+
+[node name="TextureRect31" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Min Speed:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+
+[node name="TextureRect32" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control2" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Max Speed:"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "450"
+horizontal_alignment = 1
+
+[node name="TextureRect51" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_jqnq4")
+
+[node name="Control3" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Acceleration:"
+horizontal_alignment = 2
+
+[node name="Label6" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "200"
+horizontal_alignment = 1
+
+[node name="TextureRect41" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control4" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Decceleration:"
+horizontal_alignment = 2
+
+[node name="Label8" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+
+[node name="TextureRect21" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8snc")
+
+[node name="Control5" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Turn:"
+horizontal_alignment = 2
+
+[node name="Label10" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "135"
+horizontal_alignment = 1
+
+[node name="TextureRect42" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control6" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Max Turn:"
+horizontal_alignment = 2
+
+[node name="Label12" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "50"
+horizontal_alignment = 1
+
+[node name="TextureRect22" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8snc")
+
+[node name="Control7" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Type:"
+horizontal_alignment = 2
+
+[node name="Label14" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " Use "
+
+[node name="Control8" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Speed:"
+horizontal_alignment = 2
+
+[node name="Label16" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "200"
+horizontal_alignment = 1
+
+[node name="TextureRect43" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6gfoi")
+
+[node name="Control10" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label17" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Turn:"
+horizontal_alignment = 2
+
+[node name="Label18" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "180"
+horizontal_alignment = 1
+
+[node name="TextureRect33" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="Control11" type="Control" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label19" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Boost Max Turn:"
+horizontal_alignment = 2
+
+[node name="Label20" type="Label" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "60"
+horizontal_alignment = 1
+
+[node name="TextureRect34" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o8m7b")
+
+[node name="TextureRect11" type="TextureRect" parent="MarginContainer/ControlSnowtorcycle/VBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_nrxfb")

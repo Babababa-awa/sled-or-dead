@@ -11,3 +11,6 @@ func start() -> void:
 	
 func stop() -> void:
 	is_started = false
+
+func set_mode(mode: StringName) -> void:
+	pass

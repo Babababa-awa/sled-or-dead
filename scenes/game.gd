@@ -148,7 +148,7 @@ func change_cursor(cursor_alias: StringName) -> void:
 		
 	reset_cursor()
 	
-	var cursor_path = "res://scenes/unit/cursor/" + cursor_alias + ".tscn"
+	var cursor_path = "res://scenes/cursor/" + cursor_alias + ".tscn"
 	
 	var cursor = await load(cursor_path).instantiate()
 

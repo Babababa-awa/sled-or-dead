@@ -43,7 +43,7 @@ func restart() -> void:
 	hide_uis(Global.UIType.GAME)
 	
 	current_level.restart()
-	
+
 func _ready() -> void:
 	Global.nodes = NodeLoader.new()
 	Global.game = self
@@ -97,6 +97,10 @@ func reset_win_lose() -> void:
 	_is_lose_handeld = false
 	is_win = false
 	_is_win_handeld = false
+
+func set_mode(mode: StringName) -> void:
+	Global.level.set_mode(mode)
+	pass
 
 func add_level_child(node: Node2D) -> void:
 	$Level.add_child.call_deferred(node)

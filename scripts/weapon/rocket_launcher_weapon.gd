@@ -2,7 +2,7 @@ extends BaseWeapon
 class_name RocketLauncherWeapon
 
 const TARGET_DELTA: float = Global.ROCKET_LAUNCHER_LOCKON_DELTA
-const COOLDOWN_DELTA: float = 1.75
+const COOLDOWN_DELTA: float = 1.50
 var rocket_speed: float = 650
 var rocket_turn_speed: float = 360.0
 

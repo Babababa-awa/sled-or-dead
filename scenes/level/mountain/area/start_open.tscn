@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xvjfgbpjwgtq" path="res://scenes/level/mountain/snow_64_64.tscn" id="1_stjfk"]
 [ext_resource type="TileSet" uid="uid://c7b3y6coofh30" path="res://resources/mountain.tres" id="2_2yi6x"]
 [ext_resource type="TileSet" uid="uid://6ufse5nhsx5p" path="res://resources/physics.tres" id="2_401lj"]
-[ext_resource type="PackedScene" uid="uid://cs64547spnbxa" path="res://scenes/level/yellow/yellow_arrow.tscn" id="4_e5uer"]
+[ext_resource type="PackedScene" uid="uid://cs64547spnbxa" path="res://scenes/yellow/yellow_arrow.tscn" id="4_e5uer"]
 [ext_resource type="PackedScene" uid="uid://m7w343b18rf8" path="res://scenes/level/mountain/obstacle/medium_tree.tscn" id="6_f47g6"]
 [ext_resource type="PackedScene" uid="uid://bk8jexbglubp3" path="res://scenes/unit/object/exploding_barrel.tscn" id="7_ou12e"]
 

@@ -4,7 +4,7 @@ extends ProjectileUnit
 
 const DEATH_ANIMATION_DELTA = 1.5
 
-var speed: float = 600
+var speed: float = 625
 var turn_speed: float = 360.0
 var target: BaseUnit = null
 var direction: float = 0.0

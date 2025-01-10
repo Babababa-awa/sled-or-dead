@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/unit/vehicle/sled_hammer.gd" id="1_el527"]
 [ext_resource type="PackedScene" uid="uid://bip382xqa46t6" path="res://scenes/effect/vertical_explosion_effect.tscn" id="2_03588"]
-[ext_resource type="Texture2D" uid="uid://d1qyox1e4q3wa" path="res://assets/sprites/sled_hammer.png" id="2_rwxfn"]
+[ext_resource type="Texture2D" uid="uid://d1qyox1e4q3wa" path="res://assets/image/unit/vehicle/sled_hammer.png" id="2_rwxfn"]
 [ext_resource type="PackedScene" uid="uid://b0efpfst015he" path="res://scenes/effect/trail_effect.tscn" id="3_lspfd"]
 [ext_resource type="PackedScene" uid="uid://bo54oev3baol6" path="res://scenes/effect/boost_effect.tscn" id="4_d2m0p"]
-[ext_resource type="Texture2D" uid="uid://jwdtqw7um5s3" path="res://assets/sprites/sled_hammer_boost_cover.png" id="5_d6w2k"]
+[ext_resource type="Texture2D" uid="uid://jwdtqw7um5s3" path="res://assets/image/unit/vehicle/sled_hammer_boost_cover.png" id="5_d6w2k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2wh1"]
 atlas = ExtResource("2_rwxfn")

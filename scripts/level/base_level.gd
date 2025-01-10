@@ -8,6 +8,9 @@ var alias: StringName
 func _init(alias_: StringName) -> void:
 	alias = alias_
 
+func set_mode(mode: StringName) -> void:
+	pass
+	
 func _ready() -> void:
 	pass
 	

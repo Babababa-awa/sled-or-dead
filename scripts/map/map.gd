@@ -9,6 +9,7 @@ var _max_height: int = 0
 var _has_start: bool = false
 var _has_end: bool = false
 var _last_section: MapSection = null
+var current_difficulty: int = 1
 
 func _init(data_: DataLoader, height_: int) -> void:
 	_data = data_
@@ -22,6 +23,7 @@ func reset() -> void:
 	_has_start = false
 	_has_end = false
 	_last_section = null
+	current_difficulty = 1
 	
 func pop_section() -> MapSection:
 	if _sections.size() == 0:
@@ -65,6 +67,8 @@ func _continue_map() -> void:
 		difficulty = _get_random_difficulty(float(_current_height) / _max_height)
 		
 	#difficulty = 10
+	
+	current_difficulty = difficulty
 	
 	if _sections.size() > 0:
 		_last_section = _sections.back()

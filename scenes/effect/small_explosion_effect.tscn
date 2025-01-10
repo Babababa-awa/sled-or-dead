@@ -8,20 +8,15 @@ script = ExtResource("1_m1704")
 
 [node name="Explosion5" parent="." instance=ExtResource("2_vyi43")]
 position = Vector2(8, 0)
-frame_progress = 0.0
 
 [node name="Explosion4" parent="." instance=ExtResource("2_vyi43")]
 position = Vector2(-8, 0)
 autoplay = "default"
-frame_progress = 0.0
 
 [node name="Explosion3" parent="." instance=ExtResource("2_vyi43")]
 position = Vector2(0, -8)
-frame_progress = 0.0
 
 [node name="Explosion2" parent="." instance=ExtResource("2_vyi43")]
 position = Vector2(0, 8)
-frame_progress = 0.0
 
 [node name="Explosion1" parent="." instance=ExtResource("2_vyi43")]
-frame_progress = 0.0

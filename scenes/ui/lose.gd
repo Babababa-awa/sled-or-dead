@@ -9,8 +9,14 @@ func _ready() -> void:
 func show_ui():
 	super.show_ui()
 	Global.audio.play_sfx(&"ui/failure")
-
-	%Label2Distance.text = str(-round(Global.vehicle.position.y / Global.TILE_SIZE) - 8) + "m"
+	
+	if Global.vehicle != null:
+		%Label2Distance.text = Global.format_distance(Global.vehicle.get_distance_travelled())
+		%Label2Time.text = Global.format_time(Global.vehicle.get_time_travelled())
+	else:
+		%Label2Distance.text = Global.format_distance(0)
+		%Label2Time.text = Global.format_time(0)
+	
 	_update_button_visibility()
 	
 func _update_button_visibility() -> void:

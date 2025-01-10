@@ -13,8 +13,9 @@ var death_handled: bool = false
 var is_colliding: bool = false
 var is_in_damage_area: bool = false
 var is_projectile_hit: bool = false
+var projectile_count: Dictionary
+
 var is_damage_hit: bool = false
-var projectile_type: Global.ProjectileType = Global.ProjectileType.BULLET
 
 # Damage
 var area_damage_amount = 10
@@ -38,6 +39,8 @@ func _init(alias_: StringName, unit_type_: Global.UnitType) -> void:
 	death_cooldown = CooldownTimer.new(death_cooldown_delta)
 	death_cooldown.add_step(&"hide", Global.MIN_COLLISION_WAIT_DELTA)
 	damage_cooldown = CooldownTimer.new(damage_cooldown_delta)
+	
+	reset_projectile_count()
 
 func reset() -> void:
 	super.reset()
@@ -50,11 +53,19 @@ func reset() -> void:
 	is_colliding = false
 	is_in_damage_area = false
 	is_projectile_hit = false
+	reset_projectile_count()
 	is_damage_hit = false
-	projectile_type = Global.ProjectileType.BULLET
 	
 	death_cooldown.reset()
 	damage_cooldown.reset()
+
+func reset_projectile_count() -> void:
+	projectile_count = {
+		Global.ProjectileType.BULLET: 0,
+		Global.ProjectileType.ROCKET: 0,
+		Global.ProjectileType.EXPLOSION: 0,
+		Global.ProjectileType.NONE: 0,
+	}
 
 func _ready() -> void:
 	super._ready()
@@ -66,12 +77,17 @@ func _on_projectile_body_entered(body: Node2D) -> void:
 		return
 		
 	if Global.is_enemies(self, body):
+		if is_projectile_hit == false:
+			reset_projectile_count()
+		
 		is_projectile_hit = true
 		
+		
 		if body is ProjectileUnit:
-			projectile_type = body.projectile_type
+			projectile_count[body.projectile_type] += 1
 		else:
-			projectile_type = Global.ProjectileType.NONE
+			projectile_count[Global.ProjectileType.NONE] += 1
+			
 	
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -110,19 +126,25 @@ func _handle_damage(delta: float) -> void:
 		return
 		
 	if is_projectile_hit:
-		if projectile_type == Global.ProjectileType.BULLET:
-			if independant_projectile_bullet_damage or damage_cooldown.start():			
-				_deal_damage(projectile_bullet_damage_amount)
-		elif projectile_type == Global.ProjectileType.ROCKET:
-			if independant_projectile_rocket_damage or damage_cooldown.start():				
-				_deal_damage(projectile_rocket_damage_amount)
-		elif projectile_type == Global.ProjectileType.EXPLOSION:
-			if independant_projectile_explosion_damage or damage_cooldown.start():
-				_deal_damage(projectile_explosion_damage_amount)
-		elif projectile_type == Global.ProjectileType.NONE:
-			if damage_cooldown.start():
-				_deal_damage(projectile_none_damage_amount)
-			
+		var damage: int = 0
+		
+		for projectile_type in projectile_count:
+			if projectile_type == Global.ProjectileType.BULLET:
+				if independant_projectile_bullet_damage or damage_cooldown.start():
+					damage += projectile_bullet_damage_amount
+			elif projectile_type == Global.ProjectileType.ROCKET:
+				if independant_projectile_rocket_damage or damage_cooldown.start():
+					damage += projectile_rocket_damage_amount
+			elif projectile_type == Global.ProjectileType.EXPLOSION:
+				if independant_projectile_explosion_damage or damage_cooldown.start():
+					damage += projectile_explosion_damage_amount
+			elif projectile_type == Global.ProjectileType.NONE:
+				if damage_cooldown.start():
+					damage += projectile_none_damage_amount
+		
+		if damage > 0:
+			_deal_damage(damage)
+		
 		is_projectile_hit = false
 	
 	if is_in_damage_area and damage_cooldown.start():

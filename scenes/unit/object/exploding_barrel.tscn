@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bk8jexbglubp3"]
 
 [ext_resource type="Script" path="res://scenes/unit/object/exploding_barrel.gd" id="1_1gveo"]
-[ext_resource type="Texture2D" uid="uid://dst3ju6lx5dm0" path="res://assets/sprites/object/exploding_barrel.png" id="2_i8h56"]
+[ext_resource type="Texture2D" uid="uid://dst3ju6lx5dm0" path="res://assets/image/unit/object/exploding_barrel.png" id="2_i8h56"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgrdx"]
 atlas = ExtResource("2_i8h56")

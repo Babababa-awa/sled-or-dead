@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4g11xcm8v5p6"]
 
 [ext_resource type="Script" path="res://scenes/unit/object/small_crate.gd" id="1_5mx5y"]
-[ext_resource type="Texture2D" uid="uid://mf5ut0hi2nce" path="res://assets/sprites/object/small_crate.png" id="1_uyagx"]
+[ext_resource type="Texture2D" uid="uid://mf5ut0hi2nce" path="res://assets/image/unit/object/small_crate.png" id="1_uyagx"]
 [ext_resource type="PackedScene" uid="uid://cj4rurn8u7gdh" path="res://scenes/effect/small_explosion_effect.tscn" id="3_tx35s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k86ge"]

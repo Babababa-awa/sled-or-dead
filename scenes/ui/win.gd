@@ -11,6 +11,13 @@ func show_ui():
 	
 	Global.audio.play_sfx(&"ui/winner")
 	_update_button_visibility()
+	
+	if Global.vehicle != null:
+		%Label2Distance.text = Global.format_distance(Global.vehicle.get_distance_travelled())
+		%Label2Time.text = Global.format_time(Global.vehicle.get_time_travelled())
+	else:
+		%Label2Distance.text = Global.format_distance(0)
+		%Label2Time.text = Global.format_time(0)
 
 		
 func _update_button_visibility() -> void:

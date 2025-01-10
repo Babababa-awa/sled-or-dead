@@ -11,11 +11,9 @@ position = Vector2(32, 0)
 
 [node name="Explosion4" parent="." instance=ExtResource("2_dpofe")]
 position = Vector2(-32, 0)
-frame_progress = 0.0
 
 [node name="Explosion3" parent="." instance=ExtResource("2_dpofe")]
 position = Vector2(0, -32)
-frame_progress = 0.0
 
 [node name="Explosion2" parent="." instance=ExtResource("2_dpofe")]
 position = Vector2(0, 32)

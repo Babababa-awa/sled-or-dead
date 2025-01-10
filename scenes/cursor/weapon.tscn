@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=3 uid="uid://bai36u2uryp53"]
+
+[ext_resource type="Script" path="res://scenes/cursor/weapon.gd" id="1_512sh"]
+[ext_resource type="Texture2D" uid="uid://lj06j2qv0k7t" path="res://assets/image/cursor/cursors.png" id="2_djy8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5djfj"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjdau"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hodw0"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psmbl"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mr58"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q8fc"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d673n"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qll74"]
+atlas = ExtResource("2_djy8o")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kq8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5djfj")
+}],
+"loop": true,
+"name": &"machine_gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjdau")
+}],
+"loop": true,
+"name": &"machine_gun_lockon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hodw0")
+}],
+"loop": true,
+"name": &"pistol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psmbl")
+}],
+"loop": true,
+"name": &"pistol_lockon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mr58")
+}],
+"loop": true,
+"name": &"rocket_launcher",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q8fc")
+}],
+"loop": true,
+"name": &"rocket_launcher_lockon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d673n")
+}],
+"loop": true,
+"name": &"shotgun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qll74")
+}],
+"loop": true,
+"name": &"shotgun_lockon",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2egv5"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73idm"]
+size = Vector2(32, 32)
+
+[node name="Weapon" type="CharacterBody2D"]
+z_index = 15
+z_as_relative = false
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_512sh")
+
+[node name="AnimatedSprite2DCursor" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5kq8r")
+animation = &"pistol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2egv5")
+
+[node name="Area2DTarget" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DTarget"]
+shape = SubResource("RectangleShape2D_73idm")
+
+[connection signal="body_entered" from="Area2DTarget" to="." method="_on_area_2d_target_body_entered"]
+[connection signal="body_exited" from="Area2DTarget" to="." method="_on_area_2d_target_body_exited"]

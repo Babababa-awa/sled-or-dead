@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4cnaxp6g4f2h"]
+
+[ext_resource type="Script" path="res://scenes/hud/progress.gd" id="1_x8ra0"]
+[ext_resource type="PackedScene" uid="uid://1m2cx7oay56h" path="res://scenes/hud/component/track_ball.tscn" id="2_ops7l"]
+[ext_resource type="Texture2D" uid="uid://bfb6ruofxn1c7" path="res://assets/image/hud/start_line.png" id="2_vjamy"]
+[ext_resource type="Texture2D" uid="uid://cp4jvwfb6tfkq" path="res://assets/image/hud/finish_line.png" id="3_yet4i"]
+
+[sub_resource type="Gradient" id="Gradient_r0x3g"]
+colors = PackedColorArray(0.588235, 1, 1, 1, 0.796078, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_may4k"]
+offsets = PackedFloat32Array(0, 0.263158, 0.495356, 0.764706, 1)
+colors = PackedColorArray(1, 0.988235, 0.25098, 1, 1, 0.835294, 0.254902, 1, 0.976471, 0.639216, 0.105882, 1, 0.980392, 0.415686, 0.0392157, 1, 0.87451, 0.243137, 0.137255, 1)
+
+[node name="Progress" type="Node2D"]
+script = ExtResource("1_x8ra0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Line2DRemaining" type="Line2D" parent="Marker2D"]
+points = PackedVector2Array(0, 0, 0, -64)
+width = 18.0
+gradient = SubResource("Gradient_r0x3g")
+
+[node name="Line2DCurrent" type="Line2D" parent="Marker2D"]
+points = PackedVector2Array(0, 64, 0, 0)
+width = 18.0
+gradient = SubResource("Gradient_may4k")
+
+[node name="Sprite2DStartLine" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+texture = ExtResource("2_vjamy")
+
+[node name="Sprite2DFinishLine" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+texture = ExtResource("3_yet4i")
+
+[node name="TrackBall" parent="." instance=ExtResource("2_ops7l")]
